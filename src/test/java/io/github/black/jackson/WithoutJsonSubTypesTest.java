@@ -1,4 +1,4 @@
-package com.github.black_06.jackson;
+package io.github.black.jackson;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

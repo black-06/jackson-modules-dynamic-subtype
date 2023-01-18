@@ -1,12 +1,10 @@
-package com.github.black_06.jackson;
+package io.github.black.jackson;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.auto.service.AutoService;
 import lombok.*;
-import lombok.experimental.Accessors;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -24,7 +22,7 @@ public class WithJsonSubTypesTest {
 
     private final ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();
 
-    public static <T extends Parent> Stream<Arguments> factory() {
+    public static Stream<Arguments> factory() {
         return Stream.of(
                 Arguments.of(FirstChild.class, new FirstChild("hello")),
                 Arguments.of(SecondChild.class, new SecondChild("world")),

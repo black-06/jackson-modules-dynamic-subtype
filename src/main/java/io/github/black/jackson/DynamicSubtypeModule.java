@@ -1,4 +1,4 @@
-package com.github.black_06.jackson;
+package io.github.black.jackson;
 
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.AnnotationIntrospector;
@@ -18,7 +18,7 @@ import java.util.function.Function;
  * <p>
  * The module caches the subclass, so it's non-real-time.
  * It's for registering subtypes without annotating the parent class.
- * See <a href="https://github.com/FasterXML/jackson-databind/issues/2104">this issues<a/> in jackson-databind.
+ * See <a href="https://github.com/FasterXML/jackson-databind/issues/2104">this issues</a> in jackson-databind.
  * <p>
  * When not found in the cache, it loads and caches subclasses using SPI.
  * Therefore, we can {@link #unregisterType} a class and then module will reload this class's subclasses.
@@ -81,6 +81,7 @@ public class DynamicSubtypeModule extends Module {
      * load parent's subclass by SPI.
      *
      * @param parent parent class.
+     * @param <S>    parent class type.
      */
     @SuppressWarnings("unchecked")
     public <S> void registerTypes(Class<S> parent) {
@@ -101,6 +102,10 @@ public class DynamicSubtypeModule extends Module {
     /**
      * register subtypes without SPI.
      * Of course, you need to provide them :)
+     *
+     * @param parent:     parent class.
+     * @param subclasses: children class.
+     * @param <S>:        parent class type.
      */
     public <S> void registerTypes(Class<S> parent, Iterable<Class<S>> subclasses) {
         List<NamedType> result = new ArrayList<>();

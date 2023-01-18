@@ -1,4 +1,4 @@
-package com.github.black_06.jackson;
+package io.github.black.jackson;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -271,11 +271,6 @@ public final class ServiceLoader<S> implements Iterable<Class<S>> {
      *
      * @return An iterator that lazily loads providers for this loader's
      * service
-     * @implNote When adding providers to the cache, the {@link #iterator
-     * Iterator} processes resources in the order that the {@link
-     * ClassLoader#getResources(String)
-     * ClassLoader.getResources(String)} method finds the service configuration
-     * files.
      */
     public Iterator<Class<S>> iterator() {
         return new Iterator<Class<S>>() {
@@ -382,7 +377,7 @@ public final class ServiceLoader<S> implements Iterable<Class<S>> {
      * @return A descriptive string
      */
     public String toString() {
-        return "com.github.black_06.jackson.ServiceLoader[" + service.getName() + "]";
+        return "io.github.black.jackson.ServiceLoader[" + service.getName() + "]";
     }
 
 }

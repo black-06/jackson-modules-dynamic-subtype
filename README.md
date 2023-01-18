@@ -7,12 +7,12 @@ Implementation on SPI.
 
 # Usage
 
-Maven dependencies. (TODO: upload to maven source)
+Maven dependencies
 
 ```xml
 
 <dependency>
-    <groupId>com.github.black-06.jackson</groupId>
+    <groupId>io.github.black-06.jackson</groupId>
     <artifactId>jackson-modules-dynamic-subtype</artifactId>
     <version>2.14.0</version>
 </dependency>
@@ -42,7 +42,7 @@ public interface Parent {
 Add the `JsonSubType` annotation to your subclass.
 
 ```java
-import com.github.black_06.jackson.JsonSubType;
+import io.github.black.jackson.JsonSubType;
 
 @JsonSubType("first-child")
 public class FirstChild {
@@ -60,7 +60,7 @@ package.FirstChild
 Alternatively, you can also use the `auto-service` to auto-generate these files:
 
 ```java
-import com.github.black_06.jackson.JsonSubType;
+import io.github.black.jackson.JsonSubType;
 import com.google.auto.service.AutoService;
 
 @AutoService(Parent.class)

@@ -1,4 +1,4 @@
-package com.github.black_06.jackson;
+package io.github.black.jackson;
 
 import com.fasterxml.jackson.annotation.JacksonAnnotation;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -25,6 +25,8 @@ public @interface JsonSubType {
     /**
      * Logical type name used as the type identifier for the class, if defined; empty
      * String means "not defined". Used unless {@link #names} is defined as non-empty.
+     *
+     * @return subtype name
      */
     String value() default "";
 
@@ -32,6 +34,7 @@ public @interface JsonSubType {
      * (optional) Logical type names used as the type identifier for the class: used if
      * more than one type name should be associated with the same type.
      *
+     * @return subtype name array
      * @since 2.12
      */
     String[] names() default {};
