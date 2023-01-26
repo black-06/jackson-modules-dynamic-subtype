@@ -75,5 +75,7 @@ Done, enjoy it.
 # More
 
 I rewrote the ServiceLoader, it only returns class instead of instance.
-It comes from **JDK 8**.
+It comes from **Oracle JDK 8**.
 I mean, this module may **NOT WORK** in other jdk version.
+
+Try this if it doesn't work: `new DynamicSubtypeModule().setUseStandardServiceLoader(true);`
