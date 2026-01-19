@@ -1,3 +1,16 @@
+# Update 2026-01-19
+
+I have merged this module into [jackson-modules-base](https://github.com/FasterXML/jackson-modules-base), which has been
+included since version 2.21.0. This repo are no longer maintained. Please use
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.module</groupId>
+    <artifactId>jackson-module-spi-subtypes</artifactId>
+    <version>2.21.0</version>
+</dependency>
+```
+
 # Overview
 
 Registering subtypes without annotating the parent class,
